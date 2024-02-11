@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 public class Line
 {
 	private double slope;
