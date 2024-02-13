@@ -35,6 +35,7 @@ public class Mersenne2 {
         m1.num = sc.nextInt();
         m1.merse();
         m1.check();
+        sc.close();
     }
 }
 

@@ -83,21 +83,17 @@ class Main {
 
         System.out.println("Enter the details of the movie: ");
         System.out.print("Title: ");
-        String title =  sc.nextLine();
+        String title = sc.nextLine();
         System.out.print("Age Restriction: ");
         int agerating = sc.nextInt();
         System.out.print("Cost: Rs.");
         double price = sc.nextDouble();
-        
-        Movie m1 = new Movie(title, agerating,  price);
+
+        Movie m1 = new Movie(title, agerating, price);
 
         u1.watchMovie();
 
-
-    
-
         sc.close();
-        
 
     }
 }

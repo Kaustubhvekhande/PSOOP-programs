@@ -43,6 +43,7 @@ public class Mersenne {
         end = sc.nextInt();
 
         c1.isMersenne(start, end);
+        sc.close();
     }
 }
 

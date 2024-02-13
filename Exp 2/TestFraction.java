@@ -53,5 +53,6 @@ public class TestFraction {
                 break;
             }
         }
+        sc.close();
     }
 }

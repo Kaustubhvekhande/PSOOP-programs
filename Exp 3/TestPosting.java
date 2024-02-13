@@ -2,13 +2,13 @@ import java.util.*;
 
 public class TestPosting {
     public static void main(String[] args) {
-        Posting posting = new Posting();
+        // Posting posting = new Posting();
         Scanner sc = new Scanner(System.in);
         int coursework, apttest, techtest, interview;
 
         loop: while (true) {
 
-            System.out.println("Enter the post you want to apply\n" +
+            System.out.println("\nEnter the post you want to apply\n" +
                     "1.Programmer\n" +
                     "2.Team Leader\n" +
                     "3.Project Manager\n"+
@@ -33,7 +33,7 @@ public class TestPosting {
                     p2.display(choice);
                     break;
                 case 3:
-                    System.out.println("Enter the Marks forInterview");
+                    System.out.println("Enter the Marks for Interview");
                     interview = sc.nextInt();
                     Posting p3 = new Posting(interview);
                     p3.display(choice);
