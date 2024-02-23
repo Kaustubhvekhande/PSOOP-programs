@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Other Programs/Other Programs.iml" filepath="$PROJECT_DIR$/Other Programs/Other Programs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PSOOP-programs.iml" filepath="$PROJECT_DIR$/PSOOP-programs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Theory lecutes/Theory lecutes.iml" filepath="$PROJECT_DIR$/Theory lecutes/Theory lecutes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vj/vj.iml" filepath="$PROJECT_DIR$/vj/vj.iml" />
+    </modules>
+  </component>
+</project>
