@@ -9,7 +9,7 @@ class Book {
         ratingAvg = new double[books];
     }
 
-    Book(int i, int ratings) {
+    void setdim(int i, int ratings) {
         rating[i] = new int[ratings]; // Initialize the second dimension
     }
 
@@ -24,40 +24,42 @@ class Book {
         }
     }
 
-    void getMax(){
-        double temp =ratingAvg[0];
-        int index =0;
-        for(int i =1; i<ratingAvg.length;i++){
-            if(ratingAvg[i]>temp){
+    void getMax() {
+        double temp = ratingAvg[0];
+        int index = 0;
+        for (int i = 1; i < ratingAvg.length; i++) {
+            if (ratingAvg[i] > temp) {
                 temp = ratingAvg[i];
                 index = i;
             }
         }
-        System.out.printf("Book %d has highest rating\nHighest Rating is : %.3f", index, temp);
+        System.out.printf("Book %d is the most popular book\nAnd its rating is : %.3f", index + 1, temp);
     }
 
 }
 
 public class BookRating {
     public static void main(String[] args) {
+
+
+        // You can then print something to the cleared screen
+        System.out.println("Terminal cleared!");
+
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of books");
+        System.out.print("Enter the number of books: ");
         int books = sc.nextInt();
         Book b = new Book(books);
         int ratings = 0;
         for (int i = 0; i < books; i++) {
-            System.out.printf("Enter the Number of ratings for book %d :", i + 1);
+            System.out.printf("Enter the Number of ratings for book %d: ", i + 1);
             ratings = sc.nextInt();
-            b = new Book(i, ratings);
-        }
-
-        for (int i = 0; i < b.rating.length; i++) {
+            b.setdim(i, ratings);
             for (int j = 0; j < b.rating[i].length; j++) {
-                System.out.printf("Enter the rating %d for book %d", j, i);
+                System.out.printf("Enter the rating %d for book %d(out of 5): ", j + 1, i + 1);
                 b.rating[i][j] = sc.nextInt();
             }
+            System.out.println();
         }
-
         b.getAvg();
         b.getMax();
         sc.close();
