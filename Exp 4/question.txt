@@ -1,1 +1,39 @@
-sample
+Experiment No. 4 Arrays
+Aim: Implement a Program to demonstrate-Arrays/Strings/ Array of Objects/ objects as
+parameter
+1. Exercise GradesStatistics : Write a program called GradesStatistics, which reads in n grades (of
+int between 0 and 100, inclusive) and displays the average, minimum, maximum, median and
+standard deviation. Display the floating-point values upto 2 decimal places. Your output shall look
+like:
+Enter the number of students : 4
+Enter the grade for students 1 : 50
+Enter the grade for students 2 : 51
+Enter the grade for students 3 : 56
+Enter the grade for students 4 : 53
+{50,51,56,53}
+The average is 52.50
+The Minimum is 50
+The Maximum is 56
+The Median is : 52.00
+Note: 1) The std. deviation is 2.29(formula can be referred from internet)
+
+
+2. Book Ratings : Write a program to find the most popular book.
+Create a 2D array named bookRating which should hold ratings( 1 to 5) of a few books. You may
+consider the first constant reader's rating ( or Scan and next time as - how many readers have given
+the rating ?) Collect ratings of four such books. a)Find the average rating of each book. b) Display
+the most popular book. i.e. a Book with highest average rating.
+
+
+3. Shopping Cart: Create a 3D array named as cart which stores the cost of items purchased. Each
+conveyor belt holds 3 carts at a time.
+Each cart should contain Perishable and Non-perishable category items. Findout
+a) Total cost of each cart
+b) Findout all perishable items sold (on 3 carts)
+c) Findout costliest non-perishable item sold
+
+
+4. Write a program in Java to maintain the information of Movies which includes the information of
+name of movie , type of movie( action , thriller , comedy ,drama ) , Hero name , Heroine , budget in
+Rs. . Write a program to accept the information of movies from user and sort them according to the
+budget of the film.
