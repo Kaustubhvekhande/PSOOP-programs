@@ -1,65 +1,103 @@
-import java.util.Scanner;
+import java.lang.*;
+import java.util.*;
 
-class Book {
-    int rating[][];
-    double ratingAvg[];
+class Grades {
 
-    Book(int books) {
-        rating = new int[books][]; // Initialize only the first dimension
-        ratingAvg = new double[books];
+    int[] grade;
+
+    Grades(int n) {
+        this.grade = new int[n];
     }
 
-    Book(int i, int ratings) {
-        rating[i] = new int[ratings]; // Initialize the second dimension
+    void sortArray(int[] n) {
+        Arrays.sort(n);
     }
 
-    void getAvg() {
+    double getAvg() {
         int sum = 0;
-        for (int i = 0; i < rating.length; i++) {
-            sum = 0;
-            for (int j = 0; j < rating[i].length; j++) {
-                sum = sum + rating[i][j];
-            }
-            ratingAvg[i] = (double) sum / rating[i].length;
+        for (int i = 0; i < grade.length; i++) {
+            sum = sum + grade[i]; // initializing the variable
+        }
+        return sum / grade.length; // returning average of grades
+    }
+
+    int getMin() {
+        sortArray(this.grade);
+        return this.grade[0];
+    }
+
+    int getMax() {
+        sortArray(grade);
+        return this.grade[grade.length - 1];
+    }
+
+    int getMedian() {
+        sortArray(grade);
+        if (grade.length % 2 == 0) {
+            return (grade[grade.length / 2] + grade[(grade.length / 2) - 1]) / 2;
+        } else {
+            return grade[(grade.length / 2) + 1];
         }
     }
 
-    void getMax(){
-        double temp =ratingAvg[0];
-        int index =0;
-        for(int i =1; i<ratingAvg.length;i++){
-            if(ratingAvg[i]>temp){
-                temp = ratingAvg[i];
-                index = i;
-            }
+    double getStdDevation() {
+        double sqsum = 0.0;
+        for (int i = 0; i < grade.length; i++) {
+            sqsum += Math.pow((getAvg() - grade[i]), 2);
         }
-        System.out.printf("Book %d has highest rating\nHighest Rating is : %.3f", index, temp);
+        return Math.sqrt(sqsum / grade.length);
     }
-
 }
 
-public class BookRating {
+class GradeStatistics {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of books");
-        int books = sc.nextInt();
-        Book b = new Book(books);
-        int ratings = 0;
-        for (int i = 0; i < books; i++) {
-            System.out.printf("Enter the Number of ratings for book %d :", i + 1);
-            ratings = sc.nextInt();
-            b = new Book(i, ratings);
-        }
+        System.out.print("Enter the number of students:");
+        int n = sc.nextInt();
+        Grades g = new Grades(n);
 
-        for (int i = 0; i < b.rating.length; i++) {
-            for (int j = 0; j < b.rating[i].length; j++) {
-                System.out.printf("Enter the rating %d for book %d", j, i);
-                b.rating[i][j] = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            System.out.printf("Enter the grade of student %d:", i+1);
+            g.grade[i] = sc.nextInt();
+        }
+        int choice = 0;
+        System.out.println("1. Average");
+        System.out.println("2. Minimum");
+        System.out.println("3. Maximum");
+        System.out.println("4. Median");
+        System.out.println("5. Standard Deviation");
+        System.out.println("6. Exit");
+        while (choice != 6) {
+
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Average: " + g.getAvg());
+                    break;
+                case 2:
+                    System.out.println("Minimum: " + g.getMin());
+                    break;
+                case 3:
+                    System.out.println("Maximum: " + g.getMax());
+                    break;
+                case 4:
+                    System.out.println("Median: " + g.getMedian());
+                    break;
+                case 5:
+                    System.out.printf("Standard Deviation: %.2f",g.getStdDevation());
+                    break;
+                case 6:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 1 and 6.");
             }
+            System.out.println();
         }
 
-        b.getAvg();
-        b.getMax();
         sc.close();
+
     }
 }
