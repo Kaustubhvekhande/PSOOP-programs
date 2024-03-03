@@ -7,28 +7,25 @@ class Movies {
 
     void sort(Movies[] m) {
         int n = m.length; // Number of movies in the array
-    
+
         // Iterate over each movie except the last one
         for (int i = n - 1; i > 0; i--) {
             int minIndex = i; // Assume the current movie has the minimum budget
-    
+
             // Iterate over the remaining movies to find the one with the minimum budget
             for (int j = i - 1; j >= 0; j--) {
                 if (m[j].MBudget < m[minIndex].MBudget) {
                     minIndex = j; // Update the index of the movie with the minimum budget
                 }
             }
-    
-            // Swap the current movie (m[i]) with the movie having the minimum budget (m[minIndex])
+
+            // Swap the current movie (m[i]) with the movie having the minimum budget
+            // (m[minIndex])
             Movies temp = m[i]; // Store the current movie in a temporary variable
             m[i] = m[minIndex]; // Replace the current movie with the movie having the minimum budget
             m[minIndex] = temp; // Replace the movie having the minimum budget with the current movie
         }
     }
-    
-    
-    
-    
 
     void display(Movies[] m) {
 
@@ -71,7 +68,7 @@ public class TestMovies {
         }
 
         m1.sort(m);
-        
+
         System.out.println("Details of movie after sorting are");
         m1.display(m);
 
