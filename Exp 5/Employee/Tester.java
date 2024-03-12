@@ -12,7 +12,7 @@ public class Tester {
         boolean isPermanant;
 
         for (int i = 0; i < 5; i++) {
-            System.out.println("Enter the details of Employee" + (i + 1) + ":");
+            System.out.println("Enter the details of Employee " + (i + 1) + ":");
             System.out.print("Name: ");
             name = sc.nextLine();
             
@@ -40,7 +40,8 @@ public class Tester {
                 index = j;
             }
         }
-
+		
+		System.out.println();
         System.out.println("Details of Highest Salaried Employee are: ");
         System.out.println("Name:" + se[index].getName());
         System.out.println("Age:" + se[index].getAge());
