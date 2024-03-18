@@ -16,6 +16,7 @@ public class Main{
         p.Display();
 
         Iphone i = new Iphone();
-        i.Display();
+        //i.Display();
     }   
 }
+
