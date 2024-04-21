@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AmusmentparkMain",
+            "request": "launch",
+            "mainClass": "AmusmentparkMain",
+            "projectName": "Amusement_45f75044"
+        },
+        {
+            "type": "java",
+            "name": "TestPark",
+            "request": "launch",
+            "mainClass": "TestPark",
+            "projectName": "Amusement_45f75044"
+        }
+    ]
+}
